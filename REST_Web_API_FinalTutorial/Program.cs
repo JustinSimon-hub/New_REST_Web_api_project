@@ -1,4 +1,7 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿//ran program to understand functaionality
+
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -16,10 +19,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//redirects to the https version
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+//looks for controllers and determines the route to use
 app.MapControllers();
 
 app.Run();

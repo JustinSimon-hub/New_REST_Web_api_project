@@ -3,6 +3,8 @@
 namespace REST_Web_API_FinalTutorial.Controllers;
 
 [ApiController]
+//the route variable specifies the path the api will take to the web server
+//and where it will be accessible
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
@@ -17,8 +19,9 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
-
+    //get methods are used for retrieving data from paths
     [HttpGet(Name = "GetWeatherForecast")]
+
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
